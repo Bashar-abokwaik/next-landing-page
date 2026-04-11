@@ -1,25 +1,23 @@
-import "./globals.css";
-import Navbar from "../components/Navbar";
-import HeroCampaignSlider from "../components/HeroCampaignSlider";
-import About from "../components/About";
-import BestSellers from "@/components/BestSellers";
-import NewArrivals from "@/components/NewArrivals";
-import Categories from "@/components/Categories";
-import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
-
+import Navbar from "../components/sections/Navbar";
+import HeroSection from "../components/sections/HeroSection";
+import About from "../components/sections/About";
+import BestSellers from "@/components/sections/BestSellers";
+import NewArrivals from "@/components/sections/NewArrivals";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import Footer from "@/components/sections/Footer";
+import Newsletter from "@/components/sections/Newsletter";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar />
-      <HeroCampaignSlider />
+      <HeroSection />
       <About />
       <BestSellers />
       <NewArrivals />
-      <Categories />
+      <WhyChooseUs />
       <Newsletter />
       <Footer />
     </div>
-  )
+  );
 }

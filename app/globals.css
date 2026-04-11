@@ -28,5 +28,18 @@ body {
 html {
   scroll-behavior: smooth;
 }
+/* Logo Font */
+.logo-font {
+  font-family: 'Playfair Display', serif;
+}
 
+/* Headings Font */
+.heading-font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Body Font */
+.body-font {
+  font-family: 'Inter', sans-serif;
+}
 
