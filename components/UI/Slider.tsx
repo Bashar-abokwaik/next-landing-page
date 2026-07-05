@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Button from "./Button";
 
+// Define the Slider component that displays a horizontal slider of items
 function Slider({
   items,
   children,
@@ -10,9 +11,11 @@ function Slider({
   items: object[];
   children: React.ReactNode;
 }) {
-  const [current, setCurrent] = useState(0);
-  const [itemsPerSlide, setItemsPerSlide] = useState(3);
-  const length = items.length;
+  const [current, setCurrent] = useState(0); // State to track the current index of the slider
+  const [itemsPerSlide, setItemsPerSlide] = useState(3); // State to track the number of items displayed per slide
+  const length = items.length; // Total number of items in the slider
+
+  // Update the number of items per slide based on the window width
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,16 +28,19 @@ function Slider({
       }
     };
 
+    // Add an event listener to handle window resize and update the items per slide accordingly
     window.addEventListener("resize", handleResize);
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Function to go to the next slide in the slider
   const nextSlide = () => {
     setCurrent((prev) => (prev + itemsPerSlide) % length);
   };
 
+  // Function to go to the previous slide in the slider
   const prevSlide = () => {
     setCurrent((prev) => (prev - itemsPerSlide + length) % length);
   };

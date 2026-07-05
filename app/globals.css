@@ -1,21 +1,23 @@
 /* globals.css */
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
 /* Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --font-sans: "Geist Sans", Arial, Helvetica, sans-serif;
   --font-mono: "Geist Mono", monospace;
+  --text-primary: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --text-primary: #ededed;
 }
-
 /* Body Global Styles */
 body {
   background-color: var(--background);
@@ -30,16 +32,15 @@ html {
 }
 /* Logo Font */
 .logo-font {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 /* Headings Font */
 .heading-font {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Body Font */
 .body-font {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
-

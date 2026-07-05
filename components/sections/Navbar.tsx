@@ -1,7 +1,9 @@
 import HamburgerMenu from "../UI/HamburgerMenu";
 import ScrolledNav from "../UI/ScrolledNav";
+import ThemeToggle from "../UI/ThemeToggle";
 
 function Navbar() {
+  // Define the classes for the list items in the navigation menu
   const liClasses =
     "cursor-pointer transition-colors duration-300 hover:text-[#c07e2b]";
   return (
@@ -20,12 +22,14 @@ function Navbar() {
               <a href="#new-arrivals">New Arrivals</a>
             </li>
             <li className={liClasses}>
-              <a href="#way-choose-us">Why Choose Us</a>
+              <a href="#why-choose-us">Why Choose Us</a>
             </li>
           </ul>
 
+          <ThemeToggle />
+
           <a
-            href="#shop"
+            href="http://localhost:5173/"
             className="hidden md:inline-block px-5 py-2 bg-[#c07e2b] text-white font-semibold rounded-md hover:bg-[#b06c26] transition"
           >
             Shop Now

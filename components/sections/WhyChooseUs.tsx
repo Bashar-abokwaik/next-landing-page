@@ -1,5 +1,9 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FaShippingFast, FaGem, FaUndo, FaLock } from "react-icons/fa";
 
+// Define the features to be displayed in the "Why Choose Us" section
 const features = [
   {
     icon: <FaShippingFast size={30} />,
@@ -23,29 +27,122 @@ const features = [
   },
 ];
 
+// Define the animation variants for the container and individual cards
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 function WhyChooseUs() {
   return (
-    <section id="way-choose-us" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#3b5b81] mb-12">
+    <section
+      id="why-choose-us"
+      className="bg-[var(--bg3)] py-20 transition-colors dark:bg-slate-950"
+    >
+      <motion.div
+        className="mx-auto max-w-7xl px-6 text-center md:px-16"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+      >
+        <h2 className="mb-14 text-4xl font-bold text-[#3b5b81] dark:text-white md:text-5xl">
           Why Choose NovaStyle?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300"
+              variants={cardVariants}
+              className="
+                group
+                rounded-2xl
+                border
+                border-transparent
+                bg-white
+                dark:bg-slate-900
+                p-8
+                shadow-md
+
+                transition-all
+                duration-200
+                ease-out
+
+                hover:-translate-y-2
+                hover:scale-[1.02]
+                hover:border-[#c07e2b]/30
+                hover:shadow-2xl
+              "
             >
-              <div className="text-[#c07e2b] mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-[#3b5b81] mb-2">
+              <div
+                className="
+                  mx-auto
+                  mb-6
+                  flex
+                  h-16
+                  w-16
+                  items-center
+                  justify-center
+                  rounded-full
+
+                  bg-[#3b5b81]/10
+                  text-[#c07e2b]
+
+                  transition-all
+                  duration-200
+
+                  group-hover:scale-110
+                  group-hover:rotate-6
+                  group-hover:bg-[#c07e2b]/15
+                "
+              >
+                {feature.icon}
+              </div>
+
+              <h3
+                className="
+                  mb-3
+                  text-xl
+                  font-semibold
+                  text-[#3b5b81]
+                  dark:text-white
+
+                  transition-colors
+                  duration-200
+
+                  group-hover:text-[#c07e2b]
+                "
+              >
                 {feature.title}
               </h3>
-              <p className="text-gray-600 text-center">{feature.description}</p>
-            </div>
+
+              <p className="leading-7 text-gray-600 dark:text-gray-300">
+                {feature.description}
+              </p>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
