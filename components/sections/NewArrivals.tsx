@@ -37,7 +37,7 @@ export default function NewArrivals() {
     queryFn: async () => {
       try {
         const response = await fetch(
-          "https://novastyle-api.onrender.com/api/products/new-arrivals",
+          `${process.env.NEXT_PUBLIC_API_URL}/products/new-arrivals`,
         );
         if (!response.ok) throw new Error("Failed to fetch");
         return response.json();
