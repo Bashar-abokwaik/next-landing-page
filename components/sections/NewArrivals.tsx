@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import Placeholder from "../UI/Placeholder/Placeholder";
+import { getDiscountedPrice }from "../../utils/discountedPrice";
 
 // Define the type for a product item
 type productTemplate = {
@@ -101,7 +102,7 @@ export default function NewArrivals() {
                     {item.title}
                   </h3>
                   <p className="text-[#c07e2b] font-bold text-lg">
-                    ${item.price}
+                    ${item.discount ? getDiscountedPrice(item.price, item.discount) : item.price}
                   </p>
                 </div>
               </a>

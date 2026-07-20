@@ -5,6 +5,8 @@ import Slider from "../UI/Slider";
 import Placeholder from "../UI/Placeholder/Placeholder";
 import { motion } from "framer-motion";
 
+import {getDiscountedPrice} from "../../utils/discountedPrice";
+
 // Define the type for a product item
 type ProductItem = {
   _id: string;
@@ -54,7 +56,7 @@ function BestSellers() {
     queryFn: async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/products/best-sellers",
+          `${process.env.NEXT_PUBLIC_API_URL}/products/best-sellers`,
         );
         if (!response.ok) throw new Error("Failed to fetch");
         return response.json();
@@ -134,7 +136,7 @@ function BestSellers() {
                   </h3>
 
                   <p className="text-[#c07e2b] font-bold">
-                    ${item.product.price}
+                    ${item.product.discount ? getDiscountedPrice(item.product.price, item.product.discount) : item.product.price}
                   </p>
                 </a>
               </div>
