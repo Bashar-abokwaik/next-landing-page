@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import Placeholder from "../UI/Placeholder/Placeholder";
-import { getDiscountedPrice }from "../../utils/discountedPrice";
+import { getDiscountedPrice } from "../../utils/discountedPrice";
 
 // Define the type for a product item
 type productTemplate = {
@@ -37,7 +37,7 @@ export default function NewArrivals() {
     queryFn: async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/products/new-arrivals",
+          "https://novastyle-api.onrender.com/api/products/new-arrivals",
         );
         if (!response.ok) throw new Error("Failed to fetch");
         return response.json();
@@ -51,7 +51,6 @@ export default function NewArrivals() {
   if (error) {
     return <p className="text-center py-10">Failed to load products</p>;
   }
-
 
   // Show a loading state while the data is being fetched
   if (isLoading) {
@@ -88,7 +87,7 @@ export default function NewArrivals() {
               className="bg-white rounded-xl shadow-lg overflow-hidden transform transition hover:-translate-y-2 hover:shadow-2xl"
             >
               <a
-                href={`${item.discount ? `http://localhost:5173/offers/${item._id}` : `http://localhost:5173/products/${item._id}`}`}
+                href={`${item.discount ? `https://novastyle-store.web.app/offers/${item._id}` : `https://novastyle-store.web.app/products/${item._id}`}`}
               >
                 <div className="relative w-full h-72">
                   <img
@@ -102,7 +101,10 @@ export default function NewArrivals() {
                     {item.title}
                   </h3>
                   <p className="text-[#c07e2b] font-bold text-lg">
-                    ${item.discount ? getDiscountedPrice(item.price, item.discount) : item.price}
+                    $
+                    {item.discount
+                      ? getDiscountedPrice(item.price, item.discount)
+                      : item.price}
                   </p>
                 </div>
               </a>

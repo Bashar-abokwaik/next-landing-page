@@ -118,7 +118,7 @@ function BestSellers() {
             >
               <div className="bg-white dark:bg-slate-900 p-4 rounded-lg shadow hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#3b5b81]/20 transition-transform duration-300">
                 <a
-                  href={`${item.product.discount ? `http://localhost:5173/offers/${item.product._id}` : `http://localhost:5173/products/${item.product._id}`}`}
+                  href={`${item.product.discount ? `https://novastyle-store.web.app/offers/${item.product._id}` : `https://novastyle-store.web.app/products/${item.product._id}`}`}
                   className="block"
                 >
                   <div className="overflow-hidden rounded-lg">

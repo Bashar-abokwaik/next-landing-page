@@ -11,9 +11,9 @@ const footerLinks = {
   ],
 
   account: [
-    { title: "Explore Store", href: "http://localhost:5173" },
-    { title: "Products", href: "http://localhost:5173/products" },
-    { title: "Contact", href: "http://localhost:5173/contact" },
+    { title: "Explore Store", href: "https://novastyle-store.web.app/" },
+    { title: "Products", href: "https://novastyle-store.web.app/products" },
+    { title: "Contact", href: "https://novastyle-store.web.app/contact" },
   ],
 };
 

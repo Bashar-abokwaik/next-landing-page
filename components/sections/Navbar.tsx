@@ -29,7 +29,7 @@ function Navbar() {
           <ThemeToggle />
 
           <a
-            href="http://localhost:5173/"
+            href="https://novastyle-store.web.app/"
             className="hidden md:inline-block px-5 py-2 bg-[#c07e2b] text-white font-semibold rounded-md hover:bg-[#b06c26] transition"
           >
             Shop Now

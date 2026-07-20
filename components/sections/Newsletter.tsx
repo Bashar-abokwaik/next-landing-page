@@ -29,7 +29,7 @@ export default function Newsletter() {
       setLoading(true); // Set loading state to true while the request is in progress
       setError(null); // Reset error state before making the request
       const response = await fetch(
-        "http://localhost:5000/api/newsletter/subscribe",
+        "https://novastyle-api.onrender.com/api/newsletter/subscribe",
         {
           method: "POST",
           headers: {
