@@ -1,37 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NovaStyle Landing Page
 
-## Getting Started
+Modern landing page built with Next.js to showcase the NovaStyle brand and products.
 
-First, run the development server:
+The landing page focuses on delivering a fast, responsive, and visually appealing experience while highlighting featured products, best sellers, newsletter subscription, and company information.
+
+---
+
+## Live Demo
+
+https://novastyle-home.web.app
+
+---
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- React Query
+- Framer Motion
+
+---
+
+## Features
+
+- Hero Section
+- Best Sellers
+- About Section
+- Newsletter Subscription
+- Responsive Design
+- Dark Mode
+- Smooth Animations
+
+---
+
+## Installation
 
 ```bash
+git clone <repository>
+
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+NEXT_PUBLIC_API_URL=
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Hosted using Firebase Hosting.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# next-landing-page
+---
+
+## Folder Structure
+
+```
+app/
+
+components/
+
+hooks/
+
+services/
+
+styles/
+
+public/
+```
+
+---
+
+## Future Improvements
+
+- Testimonials
+- FAQ Section
+- Product Search
+- Blog Section
+- Internationalization (i18n)
+
+---
+
+## Author
+
+Developed by **Bashar Abokwaik**
